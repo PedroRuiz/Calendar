@@ -10,66 +10,6 @@
  */
 ?>
 
-<?= $this->section('css') ?>
-<!-- fullCalendar -->
-<link rel="stylesheet" href="<?=template('plugins/fullcalendar/main.css')?>">
-<!-- iCheck for checkboxes and radio inputs -->
-<link rel="stylesheet" href="<?= template('plugins/bootstrap-switch/css/bootstrap2/bootstrap-switch.min.css') ?>">
-<!-- daterange picker -->
-<link rel="stylesheet" href="<?= template('plugins/daterangepicker/daterangepicker.css') ?>">
-<?= $this->endSection() ?>
-
-<?= $this->section('breadcrubms') ?>
-<li class="breadcrumb-item"><a href="<?= base_url() ?>"><?= lang('calendarmodule.home') ?></a></li>
-<li class="breadcrumb-item active"><?= lang('calendarmodule.breadcrumb') ?></li>
-<?= $this->endSection() ?>
-
-<?= $this->section('js') ?>
-<!-- fullCalendar 2.2.5 -->
-<script src="<?= template('plugins/moment/moment.min.js') ?>"></script>
-<script src="<?= template('plugins/fullcalendar/main.js') ?>"></script>
-<script src="<?= template('plugins/fullcalendar/locales/es.js') ?>"></script>
-<!-- rrule -->
-<script src="<?= base_url('Modules/Calendar/ThirdParty/rrule-tz.min.js') ?>"></script>
-<!-- the rrule-to-fullcalendar connector. must go AFTER the rrule lib -->
-<script src="<?= base_url('Modules/Calendar/ThirdParty/rrule_fullcalendar.js') ?>"></script>
-<!-- date-range-picker -->
-<script src="<?= template('plugins/daterangepicker/daterangepicker.js') ?>"></script>
-<?= $this->endSection() ?>
-
-
-<?= $this->section('content') ?>
-<section class="content">
-  <div class="container-fluid">
-    <div class="row">
-
-      <!-- /.col -->
-      <div class="col-md-12">
-        <div class="card card-primary">
-          <div class="card-body p-0">
-            <!-- THE CALENDAR -->
-            <div id="calendar"></div>
-          </div>
-          <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col -->
-    </div>
-    <!-- /.row -->
-  </div><!-- /.container-fluid -->
-
-  
-
-  
-</section>
-
-
-<!-- /.content -->
-<?= $this->endSection() ?>
-
-
-
 <?= $this->section('script') ?>
 <script type="module">
   'use strict'
@@ -137,32 +77,13 @@
           }
         },
         {
-          title: 'my monthly recurring event',
+          title: 'qaz',
           backgroundColor :'<?=lang('calendarmodule.recurringBackgroundColor')?>',
           borderColor     :'<?=lang('calendarmodule.recurringBorderColor')?>',
           textColor       :'<?=lang('calendarmodule.recurringTextColor')?>',
-          rrule: {
-            freq: 'monthly',
-            interval: 1,
-            byweekday: [ 1 ],
-            dtstart: '2022-01-01T10:30:00', // will also accept '20120201T103000'
-            until: '2022-12-31' // will also accept '20120201'
-          }          
-        },
-        {
-          title: 'N U E V O   E V E N T O',
-          backgroundColor :'<?=lang('calendarmodule.recurringBackgroundColor')?>',
-          borderColor     :'<?=lang('calendarmodule.recurringBorderColor')?>',
-          textColor       :'<?=lang('calendarmodule.recurringTextColor')?>',          
-          rrule: {
-            tzid: 'Europe/Madrid',
-            dtstart: '2022-05-16T10:00:00',
-            until: '2022-06-30T10:00:00',                                    
-            freq: 'daily',            
-            byweekday: [1,3],
-          }
-
-        }
+          editable: true,
+                
+        }        
       ],
       eventClick: function(Event) {
 
@@ -225,3 +146,64 @@
   }); //$function
 </script>
 <?= $this->endSection() ?>
+
+<?= $this->section('css') ?>
+<!-- fullCalendar -->
+<link rel="stylesheet" href="<?=template('plugins/fullcalendar/main.css')?>">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="<?= template('plugins/bootstrap-switch/css/bootstrap2/bootstrap-switch.min.css') ?>">
+<!-- daterange picker -->
+<link rel="stylesheet" href="<?= template('plugins/daterangepicker/daterangepicker.css') ?>">
+<?= $this->endSection() ?>
+
+<?= $this->section('breadcrubms') ?>
+<li class="breadcrumb-item"><a href="<?= base_url() ?>"><?= lang('calendarmodule.home') ?></a></li>
+<li class="breadcrumb-item active"><?= lang('calendarmodule.breadcrumb') ?></li>
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+<!-- fullCalendar 2.2.5 -->
+<script src="<?= template('plugins/moment/moment.min.js') ?>"></script>
+<script src="<?= template('plugins/fullcalendar/main.js') ?>"></script>
+<script src="<?= template('plugins/fullcalendar/locales/es.js') ?>"></script>
+<!-- rrule -->
+<script src="<?= base_url('Modules/Calendar/ThirdParty/rrule-tz.min.js') ?>"></script>
+<!-- the rrule-to-fullcalendar connector. must go AFTER the rrule lib -->
+<script src="<?= base_url('Modules/Calendar/ThirdParty/rrule_fullcalendar.js') ?>"></script>
+<!-- date-range-picker -->
+<script src="<?= template('plugins/daterangepicker/daterangepicker.js') ?>"></script>
+<?= $this->endSection() ?>
+
+
+<?= $this->section('content') ?>
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- /.col -->
+      <div class="col-md-12">
+        <div class="card card-primary">
+          <div class="card-body p-0">
+            <!-- THE CALENDAR -->
+            <div id="calendar"></div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+
+  
+
+  
+</section>
+
+
+<!-- /.content -->
+<?= $this->endSection() ?>
+
+
+
